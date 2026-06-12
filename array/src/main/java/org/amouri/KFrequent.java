@@ -7,7 +7,10 @@ import java.util.Map;
 public class KFrequent {
 
     public int[] topKFrequent(int[] nums, int k) {
-        HashMap<Integer, Integer> map = new HashMap<>();
+
+        if (k == nums.length) return nums;
+
+        Map<Integer, Integer> map = new HashMap<>();
 
         for (int num : nums) {
             map.put(num, map.getOrDefault(num, 0) + 1);
